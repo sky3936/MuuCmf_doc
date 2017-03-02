@@ -10,22 +10,22 @@ MuuCmf内容管理框架是一个将CMS和Framework两个概念完美结合的�
 
 #技术选型
 
-#ThinkPHP
+##ThinkPHP
 ThinkPHP一直在致力于简化企业和个人的WEB应用开发，您的帮助是对我们最大的支持和动力！
 
-#OneThink
+##OneThink
 OneThink是一个开源的内容管理框架，基于最新的ThinkPHP3.2版本开发，提供更方便、更安全的WEB应用开发体验，采用了全新的架构设计和命名空间机制，融合了模块化、驱动化和插件化的设计理念于一体，开启了国内WEB应用傻瓜式开发的新潮流。
 
-#OpenCenter
+##OpenCenter
 OC基于OneThink，是产品研发团队在ThinkOX社交产品的实践基础上，提炼出来的改进版OneThink。去除了冗余的CMF部分，保留了核心的用户系统，并且扩展了模块的装卸机制。 
 
-#ZUI
+##ZUI
 ZUI继承了Bootstrap 3 中的大部分基础内容，但出于与Bootstrap不同的目的，一些组件都进行了定制和修改。
 
-#BootStrap
+##BootStrap
 Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
 
-#开发手册
+##开发手册
 https://github.com/sky3936/MuuCmf_doc
 
 
