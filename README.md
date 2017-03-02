@@ -29,4 +29,44 @@ Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布
 http://www.kancloud.cn/dameng100/muucmf/220890
 
 
+## 参加步骤
+此项目用于编写MuuCmf完全开发手册，我们希望通过git,让更多对MuuCmf感兴趣的朋友参与开发文档的完善。本文档使用MD格式文档编写，方便生成pdf,epub,mobi及html的发行版。我们会定期生成相应的格式。
+
+1. 在GitHub上 `fork` 到自己的仓库，如 `your_username/MuuCmf_doc.git`，然后 `clone` 到本地，并设置用户信息。
+
+```bash
+$ git clone git@github.com:your_username/MuuCmf_doc.git
+$ cd MuuCmf_doc
+$ git config user.name "yourname"
+$ git config user.email "your email"
+```
+
+* 修改代码后提交，并推送到自己的仓库。
+
+```bash
+$ #do some change on the content
+$ git commit -am "Fix issue #1: change helo to hello"
+$ git push
+```
+
+* 在 GitHub 网站上提交 pull request。
+
+* 定期使用项目仓库内容更新自己仓库内容。
+
+```bash
+
+$ git remote add upstream https://github.com/your_username/MuuCmf_doc.git
+
+$ git fetch upstream
+
+$ git checkout master
+
+$ git rebase upstream/master
+
+$ git push -f origin master
+
+```
+
+
+
 
