@@ -2,24 +2,31 @@
 
 ## 定义规则
 U方法的定义规则如下（方括号内参数根据实际应用决定）：
-U('地址表达式',['参数'],['伪静态后缀'],['显示域名'])
+
+> ### U('地址表达式',['参数'],['伪静态后缀'],['显示域名'])
 
 ## 地址表达式
 地址表达式的格式定义如下：
-[模块/控制器/操作#锚点@域名]?参数1=值1&参数2=值2...
+
+> [模块/控制器/操作#锚点@域名]?参数1=值1&参数2=值2...
+
 如果不定义模块的话 就表示当前模块名称，下面是一些简单的例子：
-U('User/add') // 生成User控制器的add操作的URL地址
-U('Blog/read?id=1') // 生成Blog控制器的read操作 并且id为1的URL地址
-U('Admin/User/select') // 生成Admin模块的User控制器的select操作的URL地址
+
+> U('User/add') // 生成User控制器的add操作的URL地址
+> U('Blog/read?id=1') // 生成Blog控制器的read操作 并且id为1的URL地址
+> U('Admin/User/select') // 生成Admin模块的User控制器的select操作的URL地址
 
 ## 参数
 U方法的第二个参数支持数组和字符串两种定义方式，如果只是字符串方式的参数可以在第一个参数中定义，例如：
-U('Blog/cate',array('cate_id'=>1,'status'=>1))
-U('Blog/cate','cate_id=1&status=1')
-U('Blog/cate?cate_id=1&status=1')
+
+> U('Blog/cate',array('cate_id'=>1,'status'=>1))
+> U('Blog/cate','cate_id=1&status=1')
+> U('Blog/cate?cate_id=1&status=1')
+
 三种方式是等效的，都是生成Blog控制器的cate操作 并且cate_id为1 status为1的URL地址。
 但是不允许使用下面的定义方式来传参数
-U('Blog/cate/cate_id/1/status/1');
+
+> U('Blog/cate/cate_id/1/status/1');
 
 ## 伪静态后缀
 U函数会自动识别当前配置的伪静态后缀，如果你需要指定后缀生成URL地址的话，可以显式传入，例如：
