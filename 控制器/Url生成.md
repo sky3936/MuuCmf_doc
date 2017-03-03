@@ -15,7 +15,7 @@ U方法的定义规则如下（方括号内参数根据实际应用决定）：
 如果不定义模块的话 就表示当前模块名称，下面是一些简单的例子：
 
 
-```Bash
+```Php
 U('User/add') // 生成User控制器的add操作的URL地址
 
 U('Blog/read?id=1') // 生成Blog控制器的read操作 并且id为1的URL地址
@@ -26,26 +26,34 @@ U('Admin/User/select') // 生成Admin模块的User控制器的select操作的URL
 ## 参数
 U方法的第二个参数支持数组和字符串两种定义方式，如果只是字符串方式的参数可以在第一个参数中定义，例如：
 
-      U('Blog/cate',array('cate_id'=>1,'status'=>1))
+```Php
+U('Blog/cate',array('cate_id'=>1,'status'=>1))
 
-      U('Blog/cate','cate_id=1&status=1')
+U('Blog/cate','cate_id=1&status=1')
 
-      U('Blog/cate?cate_id=1&status=1')
+U('Blog/cate?cate_id=1&status=1')
+```
 
 三种方式是等效的，都是生成Blog控制器的cate操作 并且cate_id为1 status为1的URL地址。
 但是不允许使用下面的定义方式来传参数
 
-      U('Blog/cate/cate_id/1/status/1');
+```Php
+U('Blog/cate/cate_id/1/status/1');
+```
 
 ## 伪静态后缀
 U函数会自动识别当前配置的伪静态后缀，如果你需要指定后缀生成URL地址的话，可以显式传入，例如：
 
-      U('Blog/cate','cate_id=1&status=1','xml');
+```Php
+U('Blog/cate','cate_id=1&status=1','xml');
+```
 
 ## 自动识别
 根据项目的不同URL设置，同样的U方法调用可以智能地对应产生不同的URL地址效果，例如针对：
 
-       U（'Blog/read?id=1'）;
+```Php
+U('Blog/read?id=1');
+```
 
 这个定义为例。
 
@@ -71,11 +79,15 @@ U函数会自动识别当前配置的伪静态后缀，如果你需要指定后�
 
 U方法还可以支持路由，如果我们定义了一个路由规则为：
 
-       'news/:id\d'=>'News/read'
+```Php
+'news/:id\d'=>'News/read'
+```
 
 那么可以使用
 
-      U（'/news/1'）;
+```Php
+U('/news/1');
+```
 
 最终生成的URL地址是：
 
@@ -87,7 +99,9 @@ U方法还可以支持路由，如果我们定义了一个路由规则为：
 
 如果你的应用涉及到多个子域名的操作地址，那么也可以在U方法里面指定需要生成地址的域名，例如：
 
-      U('Blog/read@blog.thinkphp.cn','id=1');
+```Php
+U('Blog/read@blog.thinkphp.cn','id=1');
+```
 
 @后面传入需要指定的域名即可。
 
@@ -99,7 +113,9 @@ U方法还可以支持路由，如果我们定义了一个路由规则为：
 
 U函数可以直接生成URL地址中的锚点，例如：
 
-      U('Blog/read#comment?id=1');
+```Php
+U('Blog/read#comment?id=1');
+```
 
 生成的URL地址可能是：
 
