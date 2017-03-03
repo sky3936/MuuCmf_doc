@@ -34,29 +34,48 @@ U方法的第二个参数支持数组和字符串两种定义方式，如果只�
 
 ## 伪静态后缀
 U函数会自动识别当前配置的伪静态后缀，如果你需要指定后缀生成URL地址的话，可以显式传入，例如：
-U('Blog/cate','cate_id=1&status=1','xml');
+
+> U('Blog/cate','cate_id=1&status=1','xml');
 
 ## 自动识别
 根据项目的不同URL设置，同样的U方法调用可以智能地对应产生不同的URL地址效果，例如针对：
-U（'Blog/read?id=1'）;
+
+> U（'Blog/read?id=1'）;
+
 这个定义为例。
+
 如果当前URL设置为普通模式的话，最后生成的URL地址是：
-http://serverName/index.php?m=Blog&a=read&id=1
+
+> http://serverName/index.php?m=Blog&a=read&id=1
+
 如果当前URL设置为PATHINFO模式的话，同样的方法最后生成的URL地址是：
-http://serverName/index.php/Home/Blog/read/id/1
+
+> http://serverName/index.php/Home/Blog/read/id/1
+
 如果当前URL设置为REWRITE模式的话，同样的方法最后生成的URL地址是：
-http://serverName/Home/Blog/read/id/1
+
+> http://serverName/Home/Blog/read/id/1
+
 如果当前URL设置为REWRITE模式，并且设置了伪静态后缀为.html的话，同样的方法最后生成的URL地址是：
-http://serverName/Home/Blog/read/id/1.html
+
+> http://serverName/Home/Blog/read/id/1.html
+
 如果开启了URL_CASE_INSENSITIVE，则会统一生成小写的URL地址。
 
 ## 生成路由地址
+
 U方法还可以支持路由，如果我们定义了一个路由规则为：
- 'news/:id\d'=>'News/read'
+
+>  'news/:id\d'=>'News/read'
+
 那么可以使用
-U（'/news/1'）;
+
+> U（'/news/1'）;
+
 最终生成的URL地址是：
-http://serverName/index.php/Home/news/1
+
+> http://serverName/index.php/Home/news/1
+
 注意：如果你是在模板文件中直接使用U方法的话，需要采用 {:U('参数1', '参数2'…)} 的方式，具体参考模板的使用函数内容。
 
 ## 域名支持
