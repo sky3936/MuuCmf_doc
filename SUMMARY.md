@@ -17,6 +17,8 @@
 	* [后台构建器Builder](模块开发/后台构建器Builder.md)
 	* [安装与卸载](模块开发/安装与卸载.md)
 * [插件开发](插件开发.md)
+* [REST API](REST API.md)
+	* [RESTAPI定义](RESTAPI/RESTAPI定义.md)
 * [后台使用指南](后台使用指南.md)
 * [二次开发指南](二次开发指南.md)
 * [官方模块手册](官方模块手册.md)
