@@ -79,15 +79,23 @@ U方法还可以支持路由，如果我们定义了一个路由规则为：
 注意：如果你是在模板文件中直接使用U方法的话，需要采用 {:U('参数1', '参数2'…)} 的方式，具体参考模板的使用函数内容。
 
 ## 域名支持
+
 如果你的应用涉及到多个子域名的操作地址，那么也可以在U方法里面指定需要生成地址的域名，例如：
-U('Blog/read@blog.thinkphp.cn','id=1');
+
+> U('Blog/read@blog.thinkphp.cn','id=1');
+
 @后面传入需要指定的域名即可。
 
 系统会自动判断当前是否SSL协议，生成https://。
+
 此外，U方法的第4个参数如果设置为true，表示自动识别当前的域名，并且会自动根据子域名部署设置APP_SUB_DOMAIN_DEPLOY和APP_SUB_DOMAIN_RULES自动匹配生成当前地址的子域名。
 
 ## 锚点支持
+
 U函数可以直接生成URL地址中的锚点，例如：
-U('Blog/read#comment?id=1');
+
+> U('Blog/read#comment?id=1');
+
 生成的URL地址可能是：
-http://serverName/index.php/Home/Blog/read/id/1#comment
+
+> http://serverName/index.php/Home/Blog/read/id/1#comment
