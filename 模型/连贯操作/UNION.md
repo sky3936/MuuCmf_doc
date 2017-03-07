@@ -21,6 +21,7 @@ $Model->field('name')
       ->union(array('field'=>'name','table'=>'think_user_2'))
       ->select();
 ```
+
 或者
 
 ```php
