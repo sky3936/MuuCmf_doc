@@ -4,14 +4,14 @@ ThinkPHP可以很好的支持AJAX请求，系统的\Think\Controller类提供了
 
 ajaxReturn方法调用示例：
 
-```Php
+```php
 $data = 'ok';
 $this->ajaxReturn($data);
 ```
 
 支持返回数组数据：
 
-```Php
+```php
 $data['status']  = 1;
 $data['content'] = 'content';
 $this->ajaxReturn($data);
@@ -19,7 +19,7 @@ $this->ajaxReturn($data);
 
 默认配置采用JSON格式返回数据（通过配置DEFAULT_AJAX_RETURN进行设置），我们可以指定格式返回，例如：
 
-```Php
+```php
 // 指定XML格式返回数据
 $data['status']  = 1;
 $data['content'] = 'content';
@@ -31,7 +31,7 @@ JSON和JSONP虽然只有一个字母的差别，但其实他们根本不是一�
 
 默认的JSONP格式返回的处理方法是jsonpReturn，如果你采用不同的方法，可以设置：
 
-```Php
+```php
 'DEFAULT_JSONP_HANDLER' =>  'myJsonpReturn', // 默认JSONP格式返回的处理方法
 ```
 
