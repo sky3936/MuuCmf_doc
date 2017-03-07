@@ -6,24 +6,29 @@ field方法属于模型的连贯操作方法之一，主要目的是标识要返
 ### 指定字段
 
 在查询操作中field方法是使用最频繁的。
+
 ```php
 $Model->field('id,title,content')->select();
 ```
+
 这里使用field方法指定了查询的结果集中包含id,title,content三个字段的值。执行的SQL相当于：
 
 ```php
 SELECT id,title,content FROM table
 ```
+
 可以给某个字段设置别名，例如：
 
 ```php
 $Model->field('id,nickname as name')->select();
 ```
+
 执行的SQL语句相当于：
 
 ```php
 SELECT id,nickname as name FROM table
 ```
+
 ### 使用SQL函数
 
 可以在field方法中直接使用函数，例如：
@@ -31,19 +36,23 @@ SELECT id,nickname as name FROM table
 ```php
 $Model->field('id,SUM(score)')->select();
 ```
+
 执行的SQL相当于：
 
 ```php
 SELECT id,SUM(score) FROM table
 ```
+
 除了select方法之外，所有的查询方法，包括find等都可以使用field方法。
-使用数组参数
+
+### 使用数组参数
 
 field方法的参数可以支持数组，例如：
 
 ```php
 $Model->field(array('id','title','content'))->select();
 ```
+
 最终执行的SQL和前面用字符串方式是等效的。
 
 数组方式的定义可以为某些字段定义别名，例如：
@@ -51,6 +60,7 @@ $Model->field(array('id','title','content'))->select();
 ```php
 $Model->field(array('id','nickname'=>'name'))->select();
 ```
+
 执行的SQL相当于：
 
 ```php
@@ -84,11 +94,13 @@ $Model->field('*')->select();
 ```php
 SELECT * FROM table
 ```
+
 但是这并不是我说的获取所有字段，我希望显式的调用所有字段（对于对性能要求比较高的系统，这个要求并不过分，起码是一个比较好的习惯），那么OK，仍然很简单，下面的用法可以完成预期的作用：
 
 ```php
 $Model->field(true)->select();
 ```
+
 field(true)的用法会显式的获取数据表的所有字段列表，哪怕你的数据表有100个字段。
 
 ### 字段排除
@@ -124,3 +136,4 @@ $Model->field('title,email,content')->save($data);
 ```
 
 如果data数据中包含有title,email,content之外的字段数据的话，也会过滤掉。
+
