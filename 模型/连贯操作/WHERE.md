@@ -1,4 +1,5 @@
 # WHERE
+
 where方法的用法是ThinkPHP查询语言的精髓，也是ThinkPHP ORM的重要组成部分和亮点所在，可以完成包括普通查询、表达式查询、快捷查询、区间查询、组合查询在内的查询操作。where方法的参数支持字符串和数组，虽然也可以使用对象但并不建议。
 
 ## 字符串条件
@@ -9,16 +10,21 @@ where方法的用法是ThinkPHP查询语言的精髓，也是ThinkPHP ORM的重�
 $User = M("User"); // 实例化User对象
 $User->where('type=1 AND status=1')->select(); 
 ```
+
 最后生成的SQL语句是
+
 ```php
 SELECT * FROM think_user WHERE type=1 AND status=1
 ```
+
 使用字符串条件的时候，建议配合预处理机制，确保更加安全，例如：
 
 ```php
 $Model->where("id=%d and username='%s' and xx='%f'",array($id,$username,$xx))->select();
 ```
+
 或者使用：
+
 ```php
 $Model->where("id=%d and username='%s' and xx='%f'",$id,$username,$xx)->select();
 ```
@@ -42,7 +48,9 @@ $map['status'] = 1;
 // 把查询条件传入查询方法
 $User->where($map)->select(); 
 ```
+
 最后生成的SQL语句是
+
 ```php
 SELECT * FROM think_user WHERE `name`='thinkphp' AND status=1
 ```
@@ -84,3 +92,4 @@ $Model->where($map)->where($where)->where('status=1')->select();
 多次的数组条件表达式会最终合并，但字符串条件则只支持一次。
 
 更多的查询用法，可以参考查询语言部分。
+
