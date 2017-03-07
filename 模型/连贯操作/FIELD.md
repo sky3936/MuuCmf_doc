@@ -24,7 +24,7 @@ $Model->field('id,nickname as name')->select();
 ```php
 SELECT id,nickname as name FROM table
 ```
-使用SQL函数
+### 使用SQL函数
 
 可以在field方法中直接使用函数，例如：
 
@@ -91,7 +91,7 @@ $Model->field(true)->select();
 ```
 field(true)的用法会显式的获取数据表的所有字段列表，哪怕你的数据表有100个字段。
 
-## 字段排除
+### 字段排除
 
 如果我希望获取排除数据表中的content字段（文本字段的值非常耗内存）之外的所有字段值，我们就可以使用field方法的排除功能，例如下面的方式就可以实现所说的功能：
 
@@ -107,12 +107,13 @@ $Model->field('user_id,content',true)->select();
 $Model->field(array('user_id','content'),true)->select();
 ```
 
-### 用于写入
+## 用于写入
 
 除了查询操作之外，field方法还有一个非常重要的安全功能--字段合法性检测。field方法结合create方法使用就可以完成表单提交的字段合法性检测，如果我们在表单提交的处理方法中使用了：
 
 ```php
 $Model->field('title,email,content')->create();
+```
 
 即表示表单中的合法字段只有title,email和content字段，无论用户通过什么手段更改或者添加了浏览器的提交字段，都会直接屏蔽。因为，其他是所有字段我们都不希望由用户提交来决定，你可以通过自动完成功能定义额外的字段写入。
 
