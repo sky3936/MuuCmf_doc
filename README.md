@@ -28,7 +28,7 @@ Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布
 ## 开发手册
 https://github.com/sky3936/MuuCmf_doc
 
-## 手册目录(SUMMARY.md)
+## [手册目录](SUMMARY.md)
 
 ## 参加步骤
 此项目用于编写MuuCmf完全开发手册，我们希望通过git,让更多对MuuCmf感兴趣的朋友参与开发文档的完善。本文档使用MD格式文档编写，方便生成pdf,epub,mobi及html的发行版。我们会定期生成相应的格式。
